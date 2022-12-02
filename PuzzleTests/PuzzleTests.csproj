@@ -19,4 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\aoc-2022-cli\aoc-2022-cli.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="TestsForDays\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestsForDays\" />
+  </ItemGroup>
 </Project>
