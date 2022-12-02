@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>aoc_2022_cli</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Puzzles\" />
+    <None Remove="Data\" />
+    <None Remove="Services\" />
+    <None Remove="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Puzzles\" />
+    <Folder Include="Data\" />
+    <Folder Include="Services\" />
+    <Folder Include="Entities\" />
+  </ItemGroup>
+</Project>
