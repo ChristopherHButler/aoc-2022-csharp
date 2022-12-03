@@ -31,11 +31,6 @@ public class DataFileReader
             var filePath = runningTests ? testPath : path;
             var fullPath = $"{filePath}/{_now}-data.txt";
 
-            Console.WriteLine($"DFR - testPath: {testPath}");
-            Console.WriteLine($"DFR - _now: {_now}");
-
-            Console.WriteLine($"DFR - fullPath: {fullPath}");
-
             FullPath = fullPath;
 
             if (debugMode)
@@ -59,6 +54,7 @@ public class DataFileReader
                 {
                     Console.WriteLine($"DataFileReader - ReadFile - strArr.Length: {strArr.Length}");
                     Console.WriteLine($"DataFileReader - ReadFile - Lines.Count: {Lines.Count}");
+                    Console.WriteLine($"DataFileReader - ReadFile - Lines[0]: {Lines[0]}");
                 }
 
             }
