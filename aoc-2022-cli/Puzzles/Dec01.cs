@@ -7,17 +7,17 @@ public class Dec01
 {
     public List<Elf> Elves { get; set; } = new List<Elf>();
 
-    public Dec01(bool runningTests = false)
+    public Dec01(string? date = null, bool runningTests = false)
     {
-        CreateElves(runningTests);
+        CreateElves(date, runningTests);
         LogElfData();
     }
 
     // Is the ugliness of this code buried deeply enough uncle bob?
-    private void CreateElves(bool runningTests)
+    private void CreateElves(string? date, bool runningTests)
     {
         // create a data file reader and read the file.
-        var dfr = new DataFileReader(filename: "", runningTests: runningTests);
+        var dfr = new DataFileReader(date: date, runningTests: runningTests);
         dfr.ReadFile();
 
         // track the "current" elf

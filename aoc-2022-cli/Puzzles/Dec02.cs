@@ -9,15 +9,15 @@ public class Dec02
     public Player MePart1 = new Player("Chris Part 1");
     public Player MePart2 = new Player("Chris Part 2");
 
-    public Dec02(bool runningTests = false, bool debugMode = false)
+    public Dec02(string? date = null, bool runningTests = false, bool debugMode = false)
     {
-        Run(runningTests, debugMode);
+        Solve(date, runningTests, debugMode);
     }
 
-    public void Run(bool runningTests, bool debugMode)
+    public void Solve(string? date = null, bool runningTests = false, bool debugMode = false)
     {
-        var dfr = new DataFileReader(filename: "", debugMode: true);
-        dfr.ReadFile(debugMode: true);
+        var dfr = new DataFileReader(filename: "", date: date, runningTests: runningTests, debugMode: debugMode);
+        dfr.ReadFile(debugMode: debugMode);
 
         for (int i = 0; i < dfr.Lines.Count; i++)
         {
