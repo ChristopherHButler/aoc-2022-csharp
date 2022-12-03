@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Run();
+        RunDay02();
 
         // Wait for user
         Console.Read();
@@ -23,20 +23,19 @@ class Program
         if (runTodaysPuzzle)
         {
             // run today's...do this later
-            RunDay02();
         }
     }
 
     private static void RunDay01()
     {
-        var dec01 = new Dec01();
+        var dec01 = new Dec01(date: "01-12-2022");
         dec01.SolvePartOne();
         dec01.SolvePartTwo();
     }
 
     private static void RunDay02()
     {
-        var dec02 = new Dec02();
+        var dec02 = new Dec02(date: "02-12-2022");
         dec02.DisplayResults();
     }
 }

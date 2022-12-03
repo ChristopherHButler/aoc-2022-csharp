@@ -11,7 +11,7 @@ public class Puzzle1Tests
     public void TotalElfCount_ReturnsCorrectNumberOfElves(int elfCount)
     {
         // Arrange / Act
-        var dec01 = new Dec01(runningTests: true);
+        var dec01 = new Dec01(date: "01-12-2022", runningTests: true);
 
         Assert.That(dec01.Elves.Count, Is.EqualTo(elfCount));
 
@@ -20,7 +20,7 @@ public class Puzzle1Tests
     [Test]
     public void Elf_0_CalculatedCalories_Equals_ManualCalorieCalculation()
     {
-        var dec01 = new Dec01(runningTests: true);
+        var dec01 = new Dec01(date: "01-12-2022", runningTests: true);
         var firstElf = dec01.Elves[0];
         // from provided data
         var manualSum = 7896 + 4992 + 1382 + 2920 + 7533 + 2709 + 6020 + 5321 + 2698 + 6806 + 8008;
@@ -32,7 +32,7 @@ public class Puzzle1Tests
     [TestCase(68787)]
     public void TopElf_HasXCalories(int cals)
     {
-        var dec01 = new Dec01(runningTests: true);
+        var dec01 = new Dec01(date: "01-12-2022", runningTests: true);
         var max = dec01.GetMaxCalElf();
 
         Assert.That(max.TotalCalories, Is.EqualTo(cals));
@@ -42,7 +42,7 @@ public class Puzzle1Tests
     [TestCase(11)]
     public void TopElf_HasXItems(int items)
     {
-        var dec01 = new Dec01(runningTests: true);
+        var dec01 = new Dec01(date: "01-12-2022", runningTests: true);
         var max = dec01.GetMaxCalElf();
 
         Assert.That(max.Items.Count, Is.EqualTo(items));
@@ -52,7 +52,7 @@ public class Puzzle1Tests
     [TestCase(198041)]
     public void Top3Elves_HasXCalories(int cals)
     {
-        var dec01 = new Dec01(runningTests: true);
+        var dec01 = new Dec01(date: "01-12-2022", runningTests: true);
         var orderedElves = dec01.OrderElves();
 
         var totalCals = 0;
@@ -69,7 +69,7 @@ public class Puzzle1Tests
     [TestCase(33)]
     public void Top3Elves_HasXItems(int items)
     {
-        var dec01 = new Dec01(runningTests: true);
+        var dec01 = new Dec01(date: "01-12-2022", runningTests: true);
         var orderedElves = dec01.OrderElves();
 
         var totalItems = 0;

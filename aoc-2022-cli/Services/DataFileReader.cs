@@ -11,7 +11,7 @@ public class DataFileReader
     public string FullPath { get; set; }
     public List<string> Lines { get; set; } = new List<string>();
 
-    public DataFileReader(string? filename, bool debugMode = false, bool runningTests = false)
+    public DataFileReader(string? filename = null, string? date = null, bool debugMode = false, bool runningTests = false)
     {
         if (!String.IsNullOrEmpty(filename))
         {
@@ -24,12 +24,17 @@ public class DataFileReader
             // This is tightly coupled to directory structure. I'm cool with that.
             string path = Path.GetFullPath(Path.Combine(cwd, @"../../../Data"));
             string testPath = Path.GetFullPath(Path.Combine(cwd, @"../../../../aoc-2022-cli/Data"));
-            var now = DateTime.Now.ToString("dd-MM-yyyy");
+            var _now = String.IsNullOrEmpty(date) ? DateTime.Now.ToString("dd-MM-yyyy") : date;
             // In for a penny in for a pound.
             // This assumes you are creating a data file each day with a specific name format: dd-MM-yyyy-data.txt
             // If that is not the case, this will obviously crash and burn but I'm OK with that for this project.
             var filePath = runningTests ? testPath : path;
-            var fullPath = $"{filePath}/{now}-data.txt";
+            var fullPath = $"{filePath}/{_now}-data.txt";
+
+            Console.WriteLine($"DFR - testPath: {testPath}");
+            Console.WriteLine($"DFR - _now: {_now}");
+
+            Console.WriteLine($"DFR - fullPath: {fullPath}");
 
             FullPath = fullPath;
 
