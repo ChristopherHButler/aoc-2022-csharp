@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        RunDay03();
+        RunDay04();
 
         // Wait for user
         Console.Read();
@@ -46,6 +46,14 @@ class Program
         dec03.DefragRuckSacks(debugMode: true);
         dec03.DisplayPart1Solution();
         dec03.DisplayPart2Solution();
+    }
+
+    private static void RunDay04()
+    {
+        var results = Dec04.FindFullyContainedRanges(date: "04-12-2022", debugMode: true);
+
+        Console.WriteLine($"The count of fully contained sets is: {results[0]}");
+        Console.WriteLine($"The count of intersecting sets is: {results[1]}");
     }
 }
 
