@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        RunDay04();
+        RunDay05();
 
         // Wait for user
         Console.Read();
@@ -54,6 +54,12 @@ class Program
 
         Console.WriteLine($"The count of fully contained sets is: {results[0]}");
         Console.WriteLine($"The count of intersecting sets is: {results[1]}");
+    }
+
+    private static void RunDay05()
+    {
+        var dec05 = new Dec05();
+        dec05.Solve(date: "05-12-2022");
     }
 }
 
