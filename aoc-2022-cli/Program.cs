@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        RunDay05();
+        RunDay06();
 
         // Wait for user
         Console.Read();
@@ -60,6 +60,12 @@ class Program
     {
         var dec05 = new Dec05();
         dec05.Solve(date: "05-12-2022");
+    }
+
+    public static void RunDay06()
+    {
+        var dec06 = new Dec06();
+        dec06.Solve(date: "06-12-2022");
     }
 }
 
