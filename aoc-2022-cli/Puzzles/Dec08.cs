@@ -83,9 +83,6 @@ public class Dec08
 
                 var isTreeVisible = ScanTreeCrossHair(targetRowIndex: m, targetColumnIndex: n);
 
-                //var tree = new Tree() { Height = Convert.ToInt32(TreeGrid[m, n]), Location = new Location() { X = m, Y = n }, Visible = isTreeVisible };
-                //Trees[m, n] = tree;
-
                 if (isTreeVisible)
                 {
                     numVisible++;
@@ -240,7 +237,8 @@ public class Dec08
         int targetTreeHeight = GetTreeHeight(targetRowIndex, targetColumnIndex);
         int topScore = 0;
 
-        // we need to work from the target out (down)
+        // we need to work from the target out (moving up... which decreases the index)
+        // - 1 because you don't want to compare the tree to itself
         for (int currentRowIndex = targetRowIndex - 1; currentRowIndex >= 0; currentRowIndex--)
         {
             // get the value in the grid
@@ -266,7 +264,8 @@ public class Dec08
         var columnHeight = GetGridNumRows();
         int bottomScore = 0;
 
-        // we need to work from the target out
+        // we need to work from the target out (moving down... which increases the index)
+        // + 1 because you don't want to compare the tree to itself
         for (int currentRowIndex = targetRowIndex + 1; currentRowIndex < columnHeight; currentRowIndex++)
         {
             // get the value in the grid
@@ -291,6 +290,8 @@ public class Dec08
         int targetTreeHeight = GetTreeHeight(targetRowIndex, targetColumnIndex);
         int leftScore = 0;
 
+        // we need to work from the target out (moving left... which decreases the index)
+        // - 1 because you don't want to compare the tree to itself
         for (int currentColumnIndex = targetColumnIndex - 1; currentColumnIndex >= 0; currentColumnIndex--)
         {
             // get the value in the grid
@@ -318,6 +319,8 @@ public class Dec08
         var rightPartRowLength = GetGridNumCols() - targetColumnIndex;
         int rightScore = 0;
 
+        // we need to work from the target out (moving right... which increases the index)
+        // + 1 because you don't want to compare the tree to itself
         for (int currentColumnIndex = targetColumnIndex + 1; currentColumnIndex < rightPartRowLength; currentColumnIndex++)
         {
             // get the value in the grid
@@ -344,18 +347,12 @@ public class Dec08
     {
         Console.WriteLine("Tree Grid:");
         Console.WriteLine("");
-        //for (var y = 0; y < GetGridNumCols(); y++)
-        //{
-        //    Console.Write($"[{y}]");
-        //}
         Console.WriteLine("");
-        // i, j are convention but to help think in 2d space using x, y
+
         for (int m = 0; m < GetGridNumRows(); m++)
         {
-            // Console.Write($"[{x}]");
             for (int n = 0; n < GetGridNumCols(); n++)
             {
-                // Console.Write($"[{TreeGrid[x, y]}]");
                 Console.Write(TreeGrid[m, n]);
             }
             Console.WriteLine("");
