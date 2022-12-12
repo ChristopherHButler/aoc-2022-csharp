@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        RunDay08();
+        RunDay09();
 
         // Wait for user
         Console.Read();
@@ -78,6 +78,11 @@ class Program
     private static void RunDay08()
     {
         var dec08 = new Dec08(date: "08-12-2022");
+    }
+
+    private static void RunDay09()
+    {
+        var dec09 = new Dec09(date: "09-12-2022");
     }
 }
 
